@@ -1,0 +1,9 @@
+{% if curso.pk == 1 %}
+    <h1><a href="https://www.cursoemvideo.com/course/python-3-mundo-1/">{{curso.nomecursos}}</a></h1>
+{% elif curso.pk == 2 %}
+    <h1><a href="https://www.cursoemvideo.com/course/java-basico/">{{curso.nomecursos}}</a></h1>
+{% elif curso.pk == 3 %}
+    <h1><a href="https://www.cursoemvideo.com/course/php-basico/">{{curso.nomecursos}}</a></h1>
+{% endif %}
+
+<h2>{{curso.nomeinstruct}}</h2>
