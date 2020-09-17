@@ -18,7 +18,7 @@ def detalhe(request, id_curso):
 def escolha(request, id_curso):
     curso = get_object_or_404(TodosCursos, pk=id_curso)
     try:
-        selected_tipo = curso.detalhes_set.get(pk=request.POST['choice'])
+        selected_tipo = curso.detalhes_set.get(pk=request.POST['escolha'])
     except (KeyError, TodosCursos.DoesNotExist):
         render(request, 'app1/detalhe.html', {'curso':curso, 'error_mens':'selecione uma opção válida!'})
     else:

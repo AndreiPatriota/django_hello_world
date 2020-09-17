@@ -18,3 +18,14 @@
 
 {%if error_mens %}<p><strong>{{error_mens}}</strong></p>
 {% endif %}
+
+<form action="{% url 'escolha' curso.id %}"
+    method="post">
+    {% csrf_token %}
+    {% for sel in curso.detalhes_set.all %}
+        <input type="radio" name="escolha" id="escolha{{ forloop.counter }}" value="{{ sel.id }}">
+        <label for="escolha{{ forloop.counter }}">{{sel.tipo}}</label>
+    {% endfor %}
+
+    <input type="submit" value="Submeter">
+</form>
